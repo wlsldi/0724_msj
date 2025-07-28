@@ -1,0 +1,133 @@
+/* ─── 전역 초기화 ─── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+main {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ─── 헤더 ─── */
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: .75rem;
+}
+
+/* ─── 폼 요소 ─── */
+main > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+main > div label {
+  width: 100px;
+  font-weight: 500;
+}
+main > div input,
+main > div select,
+main > div textarea {
+  flex: 1;
+  padding: .5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* ─── 버튼 기본 ─── */
+button {
+  display: inline-block;
+  margin-top: .5rem;
+  padding: .6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .2s, transform .1s;
+}
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* 등록 버튼 (초록) */
+#insert-btn {
+  background: #28a745;
+  color: #fff;
+}
+#insert-btn:hover {
+  background: #218838;
+}
+
+/* 수정 버튼 (파랑) */
+#update-btn {
+  background: #007bff;
+  color: #fff;
+}
+#update-btn:hover {
+  background: #0069d9;
+}
+
+/* 삭제 버튼 (빨강) */
+#delete-btn {
+  background: #dc3545;
+  color: #fff;
+}
+#delete-btn:hover {
+  background: #c82333;
+}
+
+/* ─── 테이블 ─── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+thead th {
+  background: #e9ecef;
+  padding: .75rem;
+  text-align: left;
+  font-weight: 600;
+}
+tbody tr {
+  border-bottom: 1px solid #dee2e6;
+}
+tbody tr:nth-child(even) {
+  background: #f8f9fa;
+}
+tbody td {
+  padding: .75rem;
+}
+tbody tr:hover {
+  background: #e2e6ea;
+}
+
+/* ─── 반응형 ─── */
+@media (max-width: 600px) {
+  main > div {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  main > div label {
+    width: auto;
+    margin-bottom: .25rem;
+  }
+  button {
+    width: 100%;
+  }
+}

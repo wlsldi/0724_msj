@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>할 일 관리</title>
+  <link rel="stylesheet" href="todo.css"/>
+  <script defer src="todo.js"></script>
+</head>
+<body>
+  <main>
+    <!-- 등록 폼 -->
+    <section id="form-section">
+      <h1>✅ To-Do 등록</h1>
+      <div>
+        <label for="content-input">내용</label>
+        <input type="text" id="content-input" placeholder="할 일을 입력하세요…" />
+      </div>
+      <div>
+        <label for="duedate-input">마감일</label>
+        <input type="date" id="duedate-input" value="2025-07-30" />
+      </div>
+      <div>
+        <label for="category-select">카테고리</label>
+        <select id="category-select">
+          <option value="0">선택하세요</option>
+          <option value="1">공부</option>
+          <option value="2">운동</option>
+          <option value="3">개발</option>
+        </select>
+      </div>
+      <button type="button" id="insert-btn">등록</button>
+    </section>
+
+    <!-- 목록 섹션 -->
+    <section id="list-section">
+      <h2>📋 할일 목록</h2>
+      <div>
+        <label for="category-filter">카테고리 필터:</label>
+        <select id="category-filter">
+          <option value="0">전체</option>
+          <option value="1">공부</option>
+          <option value="2">운동</option>
+          <option value="3">개발</option>
+        </select>
+        <span>- 클릭하면 상세보기!</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>상태</th>
+            <th>카테고리</th>
+            <th>마감일</th>
+          </tr>
+        </thead>
+        <tbody id="todo-list"></tbody>
+      </table>
+    </section>
+
+    <!-- 상세보기 섹션 -->
+    <section id="detail-section" style="display:none;">
+      <button type="button" id="back-btn">⬅️ 목록으로 돌아가기</button>
+      <h2>🧐 상세보기</h2>
+      <input type="hidden" id="todo-no"/>
+
+      <div>
+        <label for="todo-content">내용</label>
+        <input type="text" id="todo-content" />
+      </div>
+      <div>
+        <label for="todo-duedate">마감일</label>
+        <input type="date" id="todo-duedate" />
+      </div>
+      <div>
+        <label for="todo-category">카테고리</label>
+        <select id="todo-category">
+          <option value="0">선택하세요</option>
+          <option value="1">공부</option>
+          <option value="2">운동</option>
+          <option value="3">개발</option>
+        </select>
+      </div>
+      <div>
+        <label>등록일:</label> <span id="created-date"></span>
+      </div>
+      <div>
+        <label>수정일:</label> <span id="modified-date"></span>
+      </div>
+      <button type="button" id="update-btn">수정</button>
+      <button type="button" id="delete-btn">삭제</button>
+    </section>
+  </main>
+</body>
+</html>
